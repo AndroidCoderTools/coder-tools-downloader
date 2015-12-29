@@ -7,7 +7,7 @@ import android.util.Log;
 
 import com.tools.coder.downloader.store.cache.impl.BaseCache;
 import com.tools.coder.downloader.store.cache.impl.DiskCache;
-import com.tools.coder.downloader.store.util.ByteUtils;
+import com.tools.coder.downloader.store.cache.util.ByteUtils;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;

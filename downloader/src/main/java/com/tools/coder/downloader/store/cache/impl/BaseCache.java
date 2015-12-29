@@ -1,12 +1,8 @@
 package com.tools.coder.downloader.store.cache.impl;
 
 import android.content.Context;
-import android.os.Parcelable;
 
 import com.tools.coder.downloader.store.cache.Cache;
-import com.tools.coder.downloader.store.util.ByteUtils;
-
-import java.io.Serializable;
 
 /**
  * Created by Spring-Xu on 15/8/3.

@@ -1,4 +1,4 @@
-package com.tools.coder.downloader.store.util;
+package com.tools.coder.downloader.store.cache.util;
 
 import android.os.Parcel;
 import android.os.Parcelable;
