@@ -1,21 +1,20 @@
-package com.tools.coder.downloader.store.cache;
+package com.tools.coder.download.cache.impl;
 
 import android.content.Context;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.tools.coder.downloader.store.cache.impl.BaseCache;
-import com.tools.coder.downloader.store.cache.impl.DiskCache;
-import com.tools.coder.downloader.store.cache.util.ByteUtils;
+import com.tools.coder.download.cache.util.ByteUtils;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;
 
 /**
+ * Cache data in memory and save the encrypt data on disk
  * Created by Spring-Xu on 15/12/29.
  */
-public class DownloaderCache extends BaseCache {
+public class LocalCache extends BaseCache {
 
     protected static final String TYPE_STRING = "String";
     protected static final String TYPE_INT = "int";
@@ -335,7 +334,7 @@ public class DownloaderCache extends BaseCache {
         DiskCache.DEntry entry = load(context, key);
         String type = entry.etag;
         if (TextUtils.isEmpty(type)) {
-            Log.e("","key="+key+"  error:type is null");
+            Log.e("", "key=" + key + "  error:type is null");
             return null;
         }
 
@@ -370,23 +369,23 @@ public class DownloaderCache extends BaseCache {
         try {
             Class ss = Class.forName(type);
             if (Serializable.class.isAssignableFrom(ss)) {
-                return getSerializable(context,key);
+                return getSerializable(context, key);
             }
 
-            if(Parcelable.class.isAssignableFrom(ss)){
+            if (Parcelable.class.isAssignableFrom(ss)) {
                 //create creator;
                 Parcelable.Creator<T> creator;
-                Parcelable parcelable = (Parcelable)ss.newInstance();
+                Parcelable parcelable = (Parcelable) ss.newInstance();
                 Field field = ss.getDeclaredField("CREATOR");
-                if(field==null){
+                if (field == null) {
                     return null;
 
-                }else {
+                } else {
                     field.setAccessible(true);
-                    creator = (Parcelable.Creator<T>)field.get(ss.newInstance());
+                    creator = (Parcelable.Creator<T>) field.get(ss.newInstance());
                 }
 
-                return getParcelable(context,key,creator);
+                return getParcelable(context, key, creator);
             }
 
         } catch (Exception e) {

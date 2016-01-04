@@ -1,8 +1,8 @@
-package com.tools.coder.downloader.store.cache.impl;
+package com.tools.coder.download.cache.impl;
 
 import android.content.Context;
 
-import com.tools.coder.downloader.store.cache.Cache;
+import com.tools.coder.download.cache.Cache;
 
 /**
  * Created by Spring-Xu on 15/8/3.

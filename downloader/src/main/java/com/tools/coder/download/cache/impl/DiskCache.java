@@ -1,4 +1,4 @@
-package com.tools.coder.downloader.store.cache.impl;
+package com.tools.coder.download.cache.impl;
 
 import android.content.Context;
 
@@ -8,7 +8,7 @@ import com.facebook.crypto.Entity;
 import com.facebook.crypto.exception.CryptoInitializationException;
 import com.facebook.crypto.exception.KeyChainException;
 import com.facebook.crypto.util.SystemNativeCryptoLibrary;
-import com.tools.coder.downloader.store.cache.Cache;
+import com.tools.coder.download.cache.Cache;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +19,7 @@ import java.io.IOException;
  *
  * @author Spring-Xu
  */
-public class DiskCache implements Cache {
+class DiskCache implements Cache {
 
     /**
      * Default maximum disk usage in bytes.

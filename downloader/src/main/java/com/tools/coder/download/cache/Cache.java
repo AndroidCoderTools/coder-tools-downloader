@@ -1,4 +1,4 @@
-package com.tools.coder.downloader.store.cache;
+package com.tools.coder.download.cache;
 
 import java.util.Collections;
 import java.util.Map;

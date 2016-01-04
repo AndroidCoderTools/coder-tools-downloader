@@ -1,4 +1,4 @@
-package com.tools.coder.downloader.store.cache.impl;
+package com.tools.coder.download.cache.impl;
 
 import android.support.v4.util.LruCache;
 
