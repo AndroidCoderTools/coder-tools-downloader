@@ -4,7 +4,7 @@ It is a lib for android coders to download file in application.
 # How to use?
 ```Java
   FileDownloadManager.getInstance().initManger(this);
-FileDownloadManager.getInstance().downloadFile("http://img.kuaidadi.com/download/kuaididache_4.4_20208_10001.apk", "/sdcard/didi/kuaididache_4.4_20208_10001.apk", new IDownloadListener() {
+  FileDownloadManager.getInstance().downloadFile("http://img.kuaidadi.com/download/kuaididache_4.4_20208_10001.apk", "/sdcard/didi/kuaididache_4.4_20208_10001.apk", new IDownloadListener() {
                     @Override
                     public void onStart(String url) {
                       //onStart
@@ -22,7 +22,7 @@ FileDownloadManager.getInstance().downloadFile("http://img.kuaidadi.com/download
 
                     @Override
                     public void onError(String errorMsg) {
-                      //onComplete
+                      //onError
                     }
                 });
 ```
